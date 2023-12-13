@@ -48,6 +48,10 @@
                     <div class="card-body">
                         
                        {{ i.task }}
+                       <span style="position: relative; float: right;">
+                        <a href={% url 'mark_as_undone' i.pk %} class="btn btn-danger"><i class="fa fa-cross"></i> Mark as Undone</a>
+                       
+                    </span>
                     </div>
                 </div>
                 {% endfor %}
