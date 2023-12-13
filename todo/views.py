@@ -9,3 +9,6 @@ def addTask(request):
     Task.objects.create(task=task)
     #return HttpResponse('The form is submitted')
     return redirect('home')
+
+def mark_as_done(request, pk):
+    return HttpResponse(pk)
