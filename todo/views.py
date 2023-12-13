@@ -13,4 +13,7 @@ def addTask(request):
 def mark_as_done(request, pk):
     task = get_object_or_404(Task, pk=pk)
    # return HttpResponse(pk)
-    return HttpResponse(task)
+    #return HttpResponse(task)
+    task.is_completed = True 
+    task.save() 
+    return redirect('home')
