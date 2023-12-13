@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from .models import Task
 
 # Create your views here.
@@ -11,4 +11,6 @@ def addTask(request):
     return redirect('home')
 
 def mark_as_done(request, pk):
-    return HttpResponse(pk)
+    task = get_object_or_404(Task, pk=pk)
+   # return HttpResponse(pk)
+    return HttpResponse(task)
